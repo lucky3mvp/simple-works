@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <link rel="stylesheet" type="text/css" href="../css/c1.css">
+  <script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+	<a class="back-home" href="../index.html"><span>a</span></a>
+	<div class="content">
+		<input class="input" type="text" value="[     需要过滤的空格      ]" name="" id="input">
+  	<button class="btn" id="btn">过滤</button>
+	</div>
+<script>
+	$("#btn").bind("click",function(){
+		//法1
+		var v = $("#input").val();
+		var t2 = v.replace(/(\s|\u00A0)+|(\s|\u00A0)+/g, "");
+		$("#input").val(t2);
+
+		//法2
+		var v = $("#input").val();
+		var t = encodeURIComponent(v);
+		var t2 = t.replace(/%20/g, "");
+		var r = decodeURIComponent(t2);
+		$("#input").val(r);
+
+    //法3
+    var v = $("#input").val();
+    var t2 = v.replace(/^\s*|\s*$/g, "");
+    $("#input").val(t2);
+  })
+</script>
+</body>
+</html>

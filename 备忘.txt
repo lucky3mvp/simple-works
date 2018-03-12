@@ -1,0 +1,14 @@
+list-style-position
+box-shadow
+transition
+display: block;
+text-shadow: 0 2px 1px #360;
+linear-gradient
+input->outline
+span是内联元素，要设置宽度，除非block或float
+ime-mode
+
+<img>元素与一般的<p><h1>元素不同，浏览器不是直接展示出来，而是需要先获取，再显示。
+
+百度中秋例子：是用opacity来做的！！！
+滑动验证：user-select、onselectstart="return false;"、unselectable="on"

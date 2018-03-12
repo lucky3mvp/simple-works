@@ -1,0 +1,82 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+  <div class="home">
+    <div class=clip>
+      <div class="bkg"></div>
+      <div class="txt">静</div>
+    </div>
+    <div class="catalog">
+      <ol id="list">
+        <li>
+          <a href="javascript:void(0);">第一章 表单常用代码</a>
+          <div class="sublist">
+            <ul>
+              <li><a href="chapter1/escape-space.html">取出字符串左右的空格</a></li>
+              <li><a href="chapter1/disabled-chinese.html">禁止用户中文输入</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">第二章 常用图片相关代码</a>
+          <div class="sublist">
+            <ul>
+              <li><a href="chapter2/amplify.html">图片方法功能</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">第三章 内容展示常用代码</a>
+          <div class="sublist">
+            <ul>
+              <li><a href="chapter3/drag-popup.html">可拖动的弹层</a></li>
+              <li><a href="chapter3/verify.html">滑动验证</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">第四章 常用图片轮换</a>
+          <div class="sublist">
+            <ul>
+              <li><a href="chapter4/slider-pic.html">图片轮换-单个滚动</a></li>
+              <li><a href="chapter4/slider-pic-midautumn.html">图片播放-百度中秋例子</a></li>
+              <li><a href="chapter4/shadow-pulldown.html">图片遮盖下拉</a></li>
+              <li><a href="chapter4/tab-switch.html">榜单tab切换</a></li>
+              <li><a href="chapter4/popup-lenovo.html">CSS弹层-ta在联想</a></li>
+              <li><a href="chapter4/commodity-category.html">商品分类</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">第五章 移动端效果</a>
+          <div class="sublist">
+            <ul>
+              <li><a href="chapter5/flex-box.html">初试flex定位-骰子</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0);">第六章 其他</a>
+          <div class="sublist">
+            <ul>
+              <li><a href="chapter6/animation.html">CSS实现效果:animation-转动的圆盘</a></li>
+              <li><a href="chapter6/react-demo.html">初试react</a></li>
+            </ul>
+          </div>
+        </li>
+    	</ol>
+    </div>
+  </div>
+<script>
+  $("#list>li>a").bind("click",function(e){
+    var t = e.target;
+    var sublist = $(t).next();
+    $(sublist).toggle();
+  })
+</script>
+</body>
+</html>

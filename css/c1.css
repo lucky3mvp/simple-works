@@ -1,0 +1,56 @@
+/*--------------------------chapter1------------------------------ */
+.content {
+  padding: 50px; }
+
+input {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #959490;
+  border-radius: 4px;
+  outline: none;
+  text-indent: 0.5em; }
+
+button {
+  border: 1px solid #ea483e;
+  border-radius: 4px;
+  height: 30px;
+  line-height: 28px;
+  width: 45px;
+  outline: none;
+  cursor: pointer;
+  background-color: #ea483e;
+  color: #F9EBE1;
+  font-weight: 700; }
+  button:hover {
+    background-color: #F34E44; }
+  button:active {
+    background-color: #D54239;
+    border-color: #D54239; }
+
+.login-form {
+  margin: 20px;
+  clear: both; }
+  .login-form span {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center; }
+
+.psw {
+  margin-top: 20px; }
+
+.demo1 {
+  margin: 20px;
+  width: 600px; }
+
+.form-group {
+  margin-top: 20px; }
+
+.control-label {
+  height: 32px;
+  line-height: 32px; }
+
+/*# sourceMappingURL=c1.css.map */

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../css/c4.css">
+	<!--<script src="../js/jquery-1.9.1.min.js"></script>-->
+</head>
+<body>
+	<a class="back-home" href="../index.html"><span>a</span></a>
+	<div class="pic-frame">
+    <span class="arrow-left" id="prev"></span>
+    <span class="arrow-right" id="next"></span>
+    <span class="dot-instructor" id="dot">
+      <i class="dot-white"></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </span>
+    <div id="box">
+      <ul class="slider-box clearfix">
+        <li><img src="../img/1.jpg"/></li>
+        <li><img src="../img/2.png"/></li>
+        <li><img src="../img/3.jpg"/></li>
+        <li><img src="../img/4.png"/></li>
+        <li><img src="../img/5.jpg"/></li>
+      </ul>
+    </div>
+	</div>
+<script>
+  (function(){
+    var box = document.getElementById("box");
+    var dot = document.getElementById("dot");
+    var ul = box.getElementsByTagName("ul")[0];
+
+    var li = ul.getElementsByTagName("li");
+    var len = li.length;
+    var width = li[0].clientWidth;
+    var cloneNode = li[0].cloneNode(true);
+    ul.style.width = width * (li.length + 1 ) + 'px';
+    ul.appendChild(cloneNode);
+
+
+    var cur = 0, target = 0, pos = 0;
+    var next = document.getElementById("next");
+    var prev = document.getElementById("prev");
+    var timer = setInterval(auto,2000);
+
+    function auto(){
+      next.onclick();
+    }
+
+    next.onclick = function(){
+      cur = cur + 1;
+      if(cur > len){
+        cur = cur % len;
+      }
+      sliderNext(cur);
+    };
+
+    prev.onclick = function(){
+      cur = cur - 1;
+      if(cur < 0){
+        cur = (cur + len) % len
+      }
+      sliderPrev(cur);
+    };
+
+    next.onmouseover = prev.onmouseover = function(){
+      clearInterval(timer);
+    };
+
+    next.onmouseleave = prev.onmouseleave = function(){
+      timer = setInterval(auto,2000);
+    };
+
+    function sliderPrev(index){
+      if(ul.timer)
+        clearInterval(ul.timer);
+
+      target = 0 - index * width;
+      pos = 0 - (index + 1) * width;
+      ul.style.left = pos + 'px';
+
+      ul.timer = setInterval(function(){
+        pos = pos + width / 14;
+        ul.style.left = pos + 'px';
+        if(pos == target){
+          clearInterval(ul.timer);
+          ul.timer = null;
+        }
+      },20);
+
+      bot(index);
+    }
+
+    function sliderNext(index){
+      if(ul.timer)
+        clearInterval(ul.timer);
+
+      target = 0 - index * width;
+      pos = 0 - ( index - 1 ) * width;
+
+      ul.timer = setInterval(function(){
+        pos = pos - width / 14;
+        ul.style.left = pos + 'px';
+        if(pos == target){
+          clearInterval(ul.timer);
+          ul.timer = null;
+        }
+      },20);
+
+      bot(index);
+    }
+
+    function bot(index){
+      // 更新底部的指示点点
+      var dots = dot.getElementsByTagName("i");
+      for(var i = 0; i < dots.length; i++){
+        dots[i].className = "";
+      }
+      dots[index % len].className = "dot-white";
+    }
+	}());
+</script>
+</body>
+</html>

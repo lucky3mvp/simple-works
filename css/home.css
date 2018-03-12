@@ -1,0 +1,145 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  font-family: "sans-serif"; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+body {
+  background: #dce2de;
+  overflow-y: scroll; }
+
+.home {
+  position: relative;
+  margin-top: 50px;
+  padding-top: 50px; }
+
+.clip {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  margin-left: -332px; }
+  .clip .bkg {
+    border: 50px solid #CB585B;
+    width: 0;
+    height: 0;
+    border-bottom-color: transparent;
+    border-top-width: 100px; }
+  .clip .txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36px;
+    color: #F9EBE1;
+    padding-top: 20px;
+    text-align: center; }
+
+.catalog {
+  margin: 0 auto;
+  border: 2px solid #3e6e78;
+  border-radius: 5px;
+  width: 500px;
+  padding: 30px; }
+  .catalog ol {
+    list-style-position: outside;
+    padding-left: 50px;
+    color: #3e6e78; }
+    .catalog ol li {
+      padding-left: 15px;
+      font-size: 22px; }
+      .catalog ol li a {
+        font-weight: bold;
+        display: block;
+        color: #3e6e78;
+        padding: 13px 0;
+        transition: text-indent 0.6s; }
+        .catalog ol li a:hover {
+          color: #fff;
+          background-image: linear-gradient(to bottom, #5fb3b8, #3A7486);
+          border-radius: 5px;
+          text-indent: 2em;
+          text-shadow: 0 2px 1px #504146; }
+
+.sublist {
+  margin-left: 1em;
+  display: none; }
+  .sublist ul li a {
+    font-weight: normal;
+    text-indent: 0.8em;
+    padding: 10px 0;
+    font-size: 20px; }
+
+.back-home {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/arrow180.png");
+  background-size: contain; }
+  .back-home span {
+    visibility: hidden; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: ""; }
+  .clearfix:after {
+    clear: both; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+/*# sourceMappingURL=home.css.map */

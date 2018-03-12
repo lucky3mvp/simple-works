@@ -1,0 +1,5 @@
+/*--------------------------chapter2------------------------------*/
+.amplify-all{position:relative;margin:300px auto ;height:304px;width:304px;}
+.amplify-border{width:300px;height:300px;border:2px dotted #ea483e;background-color: #fff;opacity:0.3;}
+.amplify-img-small{position:absolute;top:2px;left:2px;width:300px;height:300px;transition:width 1s;transition:height 1s;}
+.amplify-img-big{position:absolute;top:-102px;left:-102px;width:500px;height:500px;}

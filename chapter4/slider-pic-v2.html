@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../css/c4.css">
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<style>
+		#scroll{
+			border-width: 10px;width: 500px;height: 300px;overflow: scroll;margin: 20px auto;
+			border-style: solid;
+			border-color: green;
+			border-color: red \9;
+			border-color: blue \0;
+			+border-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<a class="back-home" href="../index.html"><span>a</span></a>
+	<div id="scroll">
+		<div class="pic-frame" style="height:500px;margin-top:100px;">1</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">2</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">3</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">4</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">5</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">6</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">7</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">8</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">9</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">q</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">w</div>
+		<div class="pic-frame" style="height:500px;margin-top:100px;">e</div>
+	</div>
+<script>
+  // (function(){
+	// 	Array.prototype.unique4 = function(){
+	// 		var k=false;
+	//     for(var i=0;i<this.length;i++){
+	// 			if(this[i]!==this[i])
+	// 			  k=true;
+	// 			for(var j=i+1;j<this.length;){
+	// 				if(this[i]===this[j]||(k && this[j]!==this[j])){
+	// 			    this.splice(j,1);
+	// 				}else{
+	// 			    j++;
+	// 				}
+	// 			}
+	//     }
+	//     return this;
+	// 	}
+	// 	Array.prototype.unique3 = function(){
+	// 		var k=false, index;
+	//     for(var i=0;i<this.length;i++){
+	// 			index = this.indexOf(this[i])
+	// 			if(index < i && index >=0){
+	// 		    this.splice(i,1);
+	// 				i--;
+	// 			}
+	//     }
+	//     return this;
+	// 	}
+	// 	var arr4 = ["1","hello",1,null,undefined,NaN,"1333","1","hello",1,null,undefined,NaN,"1333"];
+	// 	var arr3 = ["1","hello",1,null,undefined,NaN,"1333","1","hello",1,null,undefined,NaN,"1333"];
+	// 	console.log(arr3.unique3());
+	// 	console.log(arr4.unique4());
+	// })();
+
+	var EventUtil = {
+		_eventCompat: function(event) {
+      var type = event.type;
+      if (type == 'DOMMouseScroll' || type == 'mousewheel') {
+        event.delta = (event.wheelDelta) ? event.wheelDelta / 120 : -(event.detail || 0) / 3;
+      }
+      if (event.srcElement && !event.target) {
+        event.target = event.srcElement;
+      }
+      if (!event.preventDefault && event.returnValue !== undefined) {
+        event.preventDefault = function() {
+          event.returnValue = false;
+        };
+      }
+      return event;
+    },
+
+		addHandler: function(element, type, handler, capture){
+			var _this = this;
+			if (window.addEventListener){
+				if (type === "mousewheel" && document.mozHidden !== undefined) {
+          type = "DOMMouseScroll";
+        }
+        element.addEventListener(type, function(event) {
+          handler.call(element, _this._eventCompat(event));
+        }, capture || false);
+
+			} else if (window.attachEvent){
+				element.attachEvent("on" + type, function(event) {
+          event = event || window.event;
+          handler.call(element, _this._eventCompat(event));
+        });
+				//element.attachEvent("on" + type, handler);
+			} else {
+				element["on" + type] = handler;
+			}
+		}
+	};
+
+	var ele = document.getElementById("scroll");
+
+	EventUtil.addHandler(ele,"mousewheel",function(event){
+		if(event.delta < 0)
+			console.log("向下滑了");
+		else
+			console.log("向上滑了");
+		//console.log(event.type);
+	})
+
+
+	var name = "The Window";
+	var object = {
+		name : "My Object",
+		getNameFunc : function(){
+			//return this.name;
+			return function(){
+				return this.name;
+			};
+		}
+	};
+	//alert(object.getNameFunc());
+	alert(object.getNameFunc()());
+
+
+	function Animal(){
+　　this.species = "动物";
+　}
+  function Cat(name,color){
+　　this.name = name;
+　　this.color = color;
+　}
+	var a1 = new Animal();
+	console.log(a1.constructor);
+</script>
+</body>
+</html>

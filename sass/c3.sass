@@ -1,0 +1,168 @@
+// chapter3 - drag-popup.html
+.drag-popup
+  margin: 50px auto
+  width: 399px
+  .ipt
+    outline: none
+    cursor: pointer
+    float: left
+    width: 175px
+    height: 32px
+    border: 1px solid #ccc
+    border-radius: 3px
+    text-align: center
+    margin-right: 24px
+    margin-bottom: 10px
+  .ipt-default
+    border-color: #adadad
+    background-color: #ebebeb
+    color: #333
+    &:hover
+      background-color: #e0e0e0
+  .ipt-confirm
+    border-color: #285e8e
+    background-color: #276998
+    color: #fff
+    &:hover
+      background-color: #415D87
+  .ipt-alert
+    border-color: #398439
+    background-color: #00a88f
+    color: #fff
+    &:hover
+      background-color: #0D927F
+  .ipt-delay
+    border-color: #4C9CA1
+    background-color: #5fb3b8
+    color: #fff
+    &:hover
+      background-color: #4C9CA1
+
+.hide
+  display: none
+.body-shade
+  background: rgba(0, 0, 0, .5)
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+.popup
+  position: fixed
+  height: 158px
+  width: 500px
+  background: #fff
+  border-radius: 5px
+  .p-head
+    height: 45px
+    line-height: 45px
+    text-align: center
+    font-size: 16px
+    color: #333
+  .p-body
+    text-align: left
+    padding: 0 25px
+    font-size: 14px
+    color: #999
+    margin-bottom: 15px
+    p
+      line-height: 200%
+  .p-foot
+    border-top: 1px solid #e1e1e1
+    .btn
+    text-align: center
+    font-size: 14px
+    height: 40px
+    line-height: 40px
+    display: block
+    margin: 0 auto
+    .btn
+      color: #F34E44
+    .btn-half
+      width: 49%
+      display: inline-block
+    .btn-cancel
+      color: #666
+      border-right: 1px solid #e1e1e1
+
+// chapter3 - verify.html
+.disabled-select
+  -moz-user-select: none
+  -webkit-user-select: none
+  user-select: none
+  -o-user-select: none
+  -ms-user-select: none
+.verify-box
+  margin: 100px auto
+  position: relative
+  width: 500px
+  height: 54px
+  .txt
+    font-size: 16px
+    position: absolute
+    top: 0
+    right: 0
+    background: rgba(0,0,0,0)
+    color: #CB585B
+    text-align: center
+    border: 1px solid #dcdcdc
+    width: 498px
+    height: 52px
+    line-height: 52px
+    display: inline-block
+  .passed,
+  .unpassed
+    width: 100%
+    height: 100%
+    display: inline-block
+    position: absolute
+    top: 0
+    right: 0
+  .passed
+    background-color: #00a88f
+  .unpassed
+    background-color: #e8e8e8
+  .handler
+    position: absolute
+    top: 0
+    left: 0
+    border: 1px solid #ccc
+    height: 52px
+    width: 52px
+    background-color: #fff
+    cursor: move
+    .arrow
+      color: #666
+      line-height: 52px
+      display: block
+      text-align: center
+      margin: 0 auto
+    .finish
+      display: none
+.verify-ok
+  .txt
+    color: #fff
+    //border-color: #00a88f
+  .handler
+    .arrow
+      display: none
+    .finish
+      display: block
+      width: 20px
+      height: 20px
+      border-radius: 10px
+      background-color: #00a88f
+      color: #fff
+      text-align: center
+      margin: 0 auto
+      margin-top: 17px
+.tip-box
+  position: relative
+  margin-top: 50px
+  padding-top: 50px
+  .tip
+    margin: 0 auto
+    border: 2px solid #3e6e78
+    border-radius: 5px
+    width: 500px
+    padding:  30px

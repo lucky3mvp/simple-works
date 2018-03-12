@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <link rel="stylesheet" type="text/css" href="../css/c6.css">
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/browser.min.js"></script>
+</head>
+<body class="react">
+  <div id="test0"></div>
+  <div id="test1" class="r-sec"></div>
+  <div id="test2" class="r-sec"></div>
+  <div id="test3-1" class="r-sec"></div>
+  <div id="test3-2" class="r-sec"></div>
+  <div id="test4" class="r-sec"></div>
+  <div id="test5" class="r-sec"></div>
+  <div id="test6" class="r-sec"></div>
+  <div id="test7" class="r-sec"></div>
+  <div id="test8" class="r-sec"></div>
+  <div id="test9" class="r-sec"></div>
+  <div id="test10" class="r-sec"></div>
+
+  <script type="text/babel">
+    ReactDOM.render(
+      <a className="back-home" href="../index.html"><span>a</span></a>,
+      document.getElementById("test0")
+    );
+  </script>
+  <script type="text/babel">
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo01</h3></div>
+        <p>this is asy coding!</p>
+      </div>,
+      document.getElementById("test1")
+    );
+  </script>
+  <script type="text/babel">
+    var names = ["asy","wade","iverson"];
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo02</h3></div>
+        {
+          names.map(function(name){
+              return <div>hello {name}！</div>
+          })
+        }
+      </div>,
+      document.getElementById("test2")
+    );
+  </script>
+  <script type="text/babel">
+    var names = ["测试直接在模版里插入js变量 \n","可以看见，jsx会把数组里的项合并在一起 ","相当于做了ele.innerHTML = arr.join('');"];
+    //var names2 = [asy,wade,iverson];
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo03-1</h3></div>
+        <p>{names}</p>
+      </div>,
+      document.getElementById("test3-1")
+    );
+  </script>
+  <script type="text/babel">
+    var arr = [
+      <div>this is asy coding!</div>,
+      <div>虽然div上带了class，但是经过react渲染后，class都没了，所以react一定是有自己渲染样式的机制.(2016.09.01更新，并不是哦，用className就好了)</div>,
+      <div>。。。</div>
+    ];
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo03-2</h3></div>
+        <div>{arr}</div>
+      </div>,
+      document.getElementById("test3-2")
+    );
+  </script>
+  <script type="text/babel">
+    var Message = React.createClass({
+      render: function(){
+        return (
+          <p>hahahaaaa: {this.props.message}</p>
+        )
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo04</h3></div>
+        <Message message="test component"/>
+      </div>,
+      document.getElementById("test4")
+    );
+  </script>
+  <script type="text/babel">
+    var NotesList = React.createClass({
+      render: function(){
+        var childrenList = this.props.children;
+        return(
+          <div>
+            <p>{this.props.msg}</p>
+            <ul>
+              {
+                childrenList.map(function(item){
+                  return <li>{item}</li>
+                })
+                // 还可以写成, 这也是更正确的写法
+                // React.Children.map(this.props.children, function(item){
+                //   return <li>{item}</li>
+                // })
+              }
+            </ul>
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo05</h3></div>
+        <NotesList msg="尝试使用this.props.children:">
+          <a href="#">link to somewhere</a>
+          <a href="#">link to anotherplace</a>
+        </NotesList>
+      </div>,
+      document.getElementById("test5")
+    );
+  </script>
+  <script type="text/babel">
+    var MyTitle = React.createClass({
+      render: function(){
+        return (
+          <div>
+            <p>{this.props.str}</p>
+            <p>{this.props.num}</p>
+            <p>{this.props.name}</p>
+          </div>
+        );
+      },
+      PropTypes:{
+        num: React.PropTypes.string.isRequired,
+      },
+      getDefaultProps:function(){
+        return {
+          name: "asy"
+        }
+      }
+    });
+    var data = 123;
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo06</h3></div>
+        <MyTitle str="this is a string attr" num={data} />
+      </div>,
+      document.getElementById("test6")
+    );
+  </script>
+  <script type="text/babel">
+    var MyInput = React.createClass({
+      render: function(){
+        var val = "asy";
+        return(
+          <form>
+            <input type="text" ref="myTextInput" />
+            <input type="button" value="click to focus the input" onClick={this.handleClick} />
+            <p>{val}</p>
+          </form>
+        )
+      },
+      handleClick: function(event){
+        this.refs.myTextInput.focus();
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo07</h3></div>
+        <MyInput />
+      </div>,
+      document.getElementById("test7")
+    )
+  </script>
+  <script type="text/babel">
+    var LikeButton = React.createClass({
+      getInitialState: function() {
+        return {liked: false};
+      },
+      handleClick: function(event) {
+        this.setState({liked: !this.state.liked});
+      },
+      render: function() {
+        var text = this.state.liked ? 'like' : 'don\'t liked';
+        return (
+          <p onClick={this.handleClick}>
+            You {text} this. Click to toggle.
+          </p>
+        );
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo08</h3></div>
+        <LikeButton />
+      </div>,
+      document.getElementById("test8")
+    );
+  </script>
+  <script type="text/babel">
+    var Input = React.createClass({
+      getInitialState: function(){
+        return {value: "hello"};
+      },
+      handleChange: function(event){
+        this.setState({value: event.target.value});
+      },
+      render: function(){
+        var val = this.state.value;
+        return (
+            <form>
+              <input type="text" value={val} onChange={this.handleChange} />
+              <p>{val}</p>
+            </form>
+        );
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo09</h3></div>
+        <Input />
+      </div>,
+      document.getElementById("test9")
+    );
+  </script>
+  <script type="text/babel">
+    var Hello = React.createClass({
+      getInitialState: function(){
+        return {opacity: 1.0};
+      },
+      componentDidMount: function(){
+        this.timer = setInterval(function(){
+          var opacity = this.state.opacity;
+          opacity -= 0.05;
+          if(opacity < 0.1){
+            opacity = 1.0;
+          }
+          this.setState({
+            opacity: opacity
+          });
+        }.bind(this),100);
+      },
+      componentWillUpdate: function(){
+        // console.log("will"+this.state.opacity);
+      },
+      componentDidUpdate: function(){
+        // console.log("did"+this.state.opacity);
+      },
+      render: function(){
+        return (
+          <div style={{opacity: this.state.opacity}}>
+            hello {this.props.name}
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <div className="heading"><span className="icon-circle"></span><h3>demo10</h3></div>
+        <Hello name="asy"/>
+      </div>,
+      document.getElementById("test10")
+    );
+  </script>
+  <!-- <script type="text/babel"></script> -->
+</body>
+</html>

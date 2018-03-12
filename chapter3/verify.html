@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../css/c3.css">
+	<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+	<a class="back-home" href="../index.html"><span>a</span></a>
+
+  <div class="tip-box">
+		<div class=clip>
+			<div class="bkg"></div>
+			<div class="txt">Tips</div>
+		</div>
+		<div class="tip disabled-select">
+	    <p>tips:</p>
+	    <p>user-select:none;</p>
+	    <p>onselectstart="return false;"</p>
+	    <p>unselectable="on"</p>
+		</div>
+  </div>
+
+	<div class="verify-box" id="verifybox">
+		<div class="passed"></div>
+		<div id="unpassed" class="unpassed"></div>
+		<div class="txt disabled-select" onselectstart="return false;" unselectable="on">拖动滑块验证</div>
+		<span id="handler" class="handler">
+			<span class="arrow">>></span>
+			<span class="finish disabled-select">√</span>
+		</span>
+	</div>
+
+<script>
+  (function(){
+    var handler = document.getElementById("handler");
+    var verifybox = document.getElementById("verifybox");
+    var unpassed = document.getElementById("unpassed");
+    var boxwidth = verifybox.offsetWidth;
+    var handlerwidth = handler.offsetWidth;
+    handler.onmousedown = function(eve){
+    	var orgX = eve.clientX;
+      document.onmousemove = function(event){
+        var distance = event.clientX - orgX;
+        var maxwidth = boxwidth - handlerwidth;
+        distance = distance < 0 ? 0 : distance;
+        distance = distance > maxwidth ? maxwidth : distance;
+        unpassed.style.width = boxwidth - distance + "px";
+        handler.style.left = distance + "px";
+        if(distance == maxwidth){
+          handler.onmousedown = null;
+          document.onmousemove = null;
+          document.onmouseup = null;
+          verifybox.className += " verify-ok";
+        }
+      };
+      document.onmouseup = function(event){
+        unpassed.style.width = boxwidth + "px";
+        handler.style.left = "0px";
+        document.onmousemove = null;
+        document.onmouseup = null;
+      }
+    }
+  })();
+</script>
+</body>
+</html>

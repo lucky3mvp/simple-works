@@ -1,0 +1,623 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../css/c4.css">
+	<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+	<a class="back-home" href="../index.html"><span>a</span></a>
+  <div class="category">
+    <div class="nav"></div>
+    <div class="content">
+      <div class="left-side">
+        <h4 class="title">全部商品分类</h2>
+        <div class="cnt">
+          <ul class="cate" id="category">
+            <li data-name="food">
+              <a href="#">食品保健</a>
+              <div class="sub-cate clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">坚果</a></span>
+                <span class="item"><a href="#">酒类</a></span>
+                <span class="item"><a href="#">蜜饯</a></span>
+                <span class="item"><a href="#">保健品</a></span>
+              </div>
+            </li>
+            <li data-name="fun">
+              <a href="#">文化玩乐</a>
+              <div class="sub-cate clearfix">
+                <span class="item"><a href="#">宠物食品</a></span>
+                <span class="item"><a href="#">个性定制</a></span>
+                <span class="item"><a href="#">古玩字画</a></span>
+                <span class="item"><a href="#">乐器</a></span>
+              </div>
+            </li>
+            <li data-name="material">
+              <a href="#">家装建材</a>
+              <div class="sub-cate clearfix">
+                <span class="item"><a href="#">五金工具</a></span>
+                <span class="item"><a href="#">基础建材</a></span>
+                <span class="item"><a href="#">电子电工</a></span>
+              </div>
+            </li>
+            <li data-name="skin">
+              <a href="#">美妆个护</a>
+              <div class="sub-cate clearfix">
+                <span class="item"><a href="#">面膜</a></span>
+                <span class="item"><a href="#">洁面</a></span>
+                <span class="item"><a href="#">面霜</a></span>
+                <span class="item"><a href="#">BB霜</a></span>
+                <span class="item"><a href="#">香水</a></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-side">
+        <div data-name="food" class="cnt hide">
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">休闲零食</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">营养保健</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">茶水饮料</a></span>
+            </dt>
+            <dd>
+              <div class="line">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div data-name="fun" class="cnt hide">
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">个性定制</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">古玩字画</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">乐器</a></span>
+            </dt>
+            <dd>
+              <div class="line">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div data-name="material" class="cnt hide">
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">五金工具</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">基础建材</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">电子电工</a></span>
+            </dt>
+            <dd>
+              <div class="line">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">商业办公</a></span>
+            </dt>
+            <dd>
+              <div class="line">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div data-name="skin" class="cnt hide">
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">面部护肤</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">彩妆</a></span>
+            </dt>
+            <dd>
+              <div class="line clearfix">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line clearfix">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="list">
+            <dt>
+              <span class="item"><a href="#">身体护理</a></span>
+            </dt>
+            <dd>
+              <div class="line">
+                <span class="item"><a href="#">巧克力</a></span>
+                <span class="item"><a href="#">核桃</a></span>
+                <span class="item"><a href="#">腰果</a></span>
+                <span class="item"><a href="#">花生</a></span>
+                <span class="item"><a href="#">杏仁</a></span>
+                <span class="item"><a href="#">瓜子</a></span>
+                <span class="item"><a href="#">开心</a></span>
+                <span class="item"><a href="#">松子</a></span>
+                <span class="item"><a href="#">鱿鱼</a></span>
+                <span class="item"><a href="#">虾系列</a></span>
+                <span class="item"><a href="#">蟹系列</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">海苔</a></span>
+                <span class="item"><a href="#">猪肉类</a></span>
+                <span class="item"><a href="#">牛肉干</a></span>
+                <span class="item"><a href="#">糖果</a></span>
+                <span class="item"><a href="#">口香糖</a></span>
+                <span class="item"><a href="#">布丁</a></span>
+                <span class="item"><a href="#">芒果干</a></span>
+                <span class="item"><a href="#">葡萄干</a></span>
+                <span class="item"><a href="#">香蕉干</a></span>
+                <span class="item"><a href="#">梅类制品</a></span>
+              </div>
+              <div class="line">
+                <span class="item"><a href="#">哈密瓜</a></span>
+                <span class="item"><a href="#">蔬果干</a></span>
+                <span class="item"><a href="#">枣类制品</a></span>
+                <span class="item"><a href="#">传统糕点</a></span>
+                <span class="item"><a href="#">西式糕点</a></span>
+                <span class="item"><a href="#">膨化食品</a></span>
+                <span class="item"><a href="#">饼干</a></span>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+$("#category").on("mouseenter","li",function(event){
+  var tar = event.target;
+  var name = $(tar).attr("data-name");
+  $(".right-side > div").each(function(){
+    var n = $(this).attr("data-name");
+    if(n == name)
+      $(this).removeClass("hide");
+    else
+      $(this).addClass("hide");
+  });
+});
+$("#category").on("mouseleave","li",function(event){
+  $(".right-side > div").each(function(){
+    $(this).addClass("hide");
+  });
+})
+</script>
+</body>
+</html>

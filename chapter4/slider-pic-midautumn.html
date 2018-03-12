@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../css/c4.css">
+	<!--<script src="../js/jquery-1.9.1.min.js"></script>-->
+</head>
+<body>
+	<a class="back-home" href="../index.html"><span>a</span></a>
+	<div class="mid-autumn">
+    <div class="instructor" id="instructor">
+      <a class="active" href="javascript:;" data-index="0">聚蟹客 中秋好礼</a>
+      <a class="" href="javascript:;" data-index="1">赚网 相思慧明月</a>
+      <a class="" href="javascript:;" data-index="2">草莓网 彩妆大促</a>
+      <a class="" href="javascript:;" data-index="3">中秋送礼 弄清促销</a>
+    </div>
+    <ul class="slider-box clearfix" id="box">
+      <li class="first"><img src="../img/4-1.jpg"/></li>
+      <li><img src="../img/4-2.jpg"/></li>
+      <li><img src="../img/4-3.jpg"/></li>
+      <li><img src="../img/4-4.jpg"/></li>
+    </ul>
+	</div>
+<script>
+  (function(){
+    var box = document.getElementById("box");
+    var ins = document.getElementById("instructor");
+    var li = box.getElementsByTagName("li");
+    var item = ins.getElementsByTagName("a");
+    var len = li.length;
+    var index = 0;
+
+    var timer = setInterval(auto,2000);
+
+    function auto(){
+      index = (index + 1) % len;
+			slidePic(index);
+    }
+
+    function slidePic(index){
+			for(var i = 0 ; i < len ; i++){
+				if(i == index){
+					li[i].style.opacity = 1;
+					item[i].className += "active";
+				}else{
+					li[i].style.opacity = 0;
+					item[i].className = "";
+				}
+			}
+		}
+
+    ins.onmouseover = function(event){
+      clearInterval(timer);
+      var tar = event.target || event.srcElement;
+			index = parseInt( tar.getAttribute("data-index") ); // 此处一定要转换成int,否则在auto中的运算会由于字符串和数字的运算造成bug
+			slidePic(index);
+    }
+
+    ins.onmouseleave = function(event){
+      timer = setInterval(auto,2000);
+    }
+
+  }());
+</script>
+</body>
+</html>

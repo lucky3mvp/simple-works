@@ -1,0 +1,121 @@
+/*--------------------------chapter6-----------------------------*/
+.sec,
+.r-sec
+  border: 2px solid #3e6e78
+  border-radius: 10px
+  margin: 50px
+  width: 300px
+  .heading
+    padding: 10px 20px
+    border-bottom: 1px dashed #3A7486
+    .icon-circle
+      float: left
+      border: 8px solid #CB585B
+      width: 8px
+      height: 8px
+      border-radius: 16px
+      background-color: #fff
+    h4
+      margin-left: 30px
+      color: #333
+      font-size: 16px
+      line-height: 150%
+
+
+.react
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  .r-sec
+    padding: 10px
+    .heading
+      padding: 0 0 10px
+      margin-bottom: 10px
+      h3
+        margin-left: 30px
+
+.animation
+  .sec
+    float: left
+    #myCanvas-1
+      border: 10px solid #CB585B
+      position: relative
+      margin: 20px auto 40px
+      height: 200px
+      width: 200px
+      border-radius: 110px
+      animation: circleBall 5s linear infinite
+      .ball
+        width: 20px
+        height: 20px
+        border-radius: 10px
+        background-color: #71b5ca
+        position: absolute
+        top: -15px
+        left: 40%
+    .loading
+      position: relative
+      height: 140px
+      .circle1,
+      .circle2
+        position: absolute
+        top: 50px
+        left: 110px
+        display: block
+        width: 80px
+        height: 80px
+        border-radius: 40px
+        background: rgba(197, 29, 33, 0.6)
+      .circle1
+        animation: loading 1s ease-in-out infinite
+      .circle2
+        animation: loading-reverse 1s ease-in-out infinite
+      .bar1,
+      .bar2,
+      .bar3
+        display: block
+        position: absolute
+        top: 30px
+        width: 10px
+        height: 30px
+        border-radius: 8px
+        background: rgba(197, 29, 33, 0.6)
+        animation: loading-bar 1s linear infinite
+      .bar1
+        left: 125px
+      .bar2
+        left: 145px
+        animation-delay: 0.2s
+      .bar3
+        left: 165px
+        animation-delay: 0.4s
+
+@keyframes circleBall
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@keyframes loading
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(0)
+
+@keyframes loading-reverse
+  0%
+    transform: scale(0)
+  100%
+    transform: scale(1)
+
+@keyframes loading-bar
+  0%
+    transform: scaleY(1)
+  20%
+    transform: scaleY(0.5)
+  50%
+    transform: scaleY(1)
+  80%
+    transform: scaleY(1.2)
+  100%
+    transform: scaleY(1)

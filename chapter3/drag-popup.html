@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+	<link rel="stylesheet" type="text/css" href="../css/c3.css">
+	<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<a class="back-home" href="../index.html"><span>a</span></a>
+  <div class="drag-popup clearfix">
+    <input type="button" btn-type="default" value="默认值" class="ipt ipt-default">
+    <input type="button" btn-type="confirm" value="弹出confirm" class="ipt ipt-confirm">
+    <input type="button" btn-type="alert" value="弹出alert" class="ipt ipt-alert">
+    <input type="button" btn-type="delay" value="延时关闭message" class="ipt ipt-delay">
+  </div>
+  <div class="body-shade hide"></div>
+  <div class="popup hide" id="popup">
+    <div class="p-head">弹出层</div>
+    <div class="p-body">
+      <p>可拖拽的弹层，按住鼠标拖动</p>
+      <p>弹层内容，居左对齐，告诉需要确认的信息等</p>
+    </div>
+    <div class="p-foot hide" name="default">
+      <a href="javascript:;" class="btn" btn-action="confirm">确定</a>
+    </div>
+    <div class="p-foot hide" name="confirm">
+      <a href="javascript:;" class="btn btn-half btn-cancel" btn-action="cancel">取消</a>
+      <a href="javascript:;" class="btn btn-half" btn-action="confirm">确定</a>
+    </div>
+    <div class="p-foot hide" name="alert">
+      <a href="javascript:;" class="btn" btn-action="confirm">确定</a>
+    </div>
+    <div class="p-foot hide" name="delay"></div>
+  </div>
+
+<script>
+  (function(){
+    var buttons = document.getElementsByTagName("input");
+    var len = buttons.length;
+    for(var i=0;i<len;i++){
+      buttons[i].onclick = openPopup;
+    }
+
+    var popup = document.getElementById("popup");
+    popup.onmousedown = function(event){
+      var tar = event.target;
+      var _this = this;
+      var offsetL = event.clientX - _this.offsetLeft;
+      var offsetT = event.clientY - _this.offsetTop;
+      if(tar.className.indexOf("btn") >= 0){
+        return;
+      }else{
+        popup.onmousemove = function(event){
+          drag.call(popup,event,offsetL,offsetT);
+        };
+      }
+      document.onmouseup = function(){
+        popup.onmousemove = null;
+				event.target.style.cursor = "default";
+      };
+    };
+
+    function drag(event,offsetL,offsetT){
+			event.target.style.cursor = "move";
+      var _this = this;
+      var left = event.clientX - offsetL;
+      var top = event.clientY - offsetT;
+//    var maxLeft = window.innerWidth - _this.offsetWidth;
+//    var maxTop = window.innerHeight - _this.offsetHeight;
+      var maxLeft = document.documentElement.clientWidth - _this.offsetWidth;
+      var maxTop = document.documentElement.clientHeight - _this.offsetHeight;
+      left = left > 0 ? left : 0;
+      top = top > 0 ? top : 0;
+      left = left < maxLeft ? left : maxLeft;
+      top = top < maxTop ? top : maxTop;
+      _this.style.left = left + "px";
+      _this.style.top = top + "px";
+    }
+
+    var popupBtns = popup.getElementsByTagName("a");
+    len = popupBtns.length;
+    for(var i=0;i<len;i++){
+      var action = popupBtns[i].getAttribute("btn-action");
+      if(action == "cancel"){
+        popupBtns[i].onclick = closePoup;
+        //以下是取消的后续操作
+      }else{
+        popupBtns[i].onclick = closePoup;
+        //以下是确定的后续操作
+      }
+    }
+  })();
+
+  function openPopup(){
+    var _this = this;
+    var n = _this.getAttribute("btn-type");
+    var list = document.querySelectorAll(".p-foot");
+    for(var i=0; i<list.length; i++){
+      if(list[i].getAttribute("name") == n)
+        list[i].style.display = "block";
+      else
+        list[i].style.display = "none";
+    }
+    if(n == "delay"){
+      setTimeout(closePoup,2000);
+    }
+    showPopup();
+  }
+
+  function showPopup(){
+    var popup = document.getElementById("popup");
+    var shade = document.getElementsByClassName("body-shade")[0];
+    shade.style.display = "block";
+    popup.style.display = "block";
+    var h1 = window.innerHeight / 2;
+    var w1 = window.innerWidth / 2;
+    var h2 = popup.offsetHeight / 2;
+    var w2 = popup.offsetWidth / 2;
+    var left = (w1 - w2) > 0 ? (w1 - w2) : 0;
+    var top = (h1 - h2 - 50) > 0 ? (h1 - h2 - 50) : 0;
+    popup.style.left = left + "px";
+    popup.style.top = top + "px";
+  }
+
+  function closePoup(){
+    var popup = document.getElementById("popup");
+    var shade = document.getElementsByClassName("body-shade")[0];
+    popup.style.display = "none";
+    shade.style.display = "none";
+  }
+
+</script>
+</body>
+</html>
